@@ -12,6 +12,10 @@ board, called the guess board, only records the player’s hits and misses
 (guesses) on the opponent’s ships. Each player cannot see their opponent’s 
 arrangement of ships.
 
+<img width="280" alt="Figure 1" src="https://user-images.githubusercontent.com/60496370/73511262-4cc58f00-43a2-11ea-9f6f-ee6d3a5ff2d0.png"> <img width="280" alt="Figure 2" src="https://user-images.githubusercontent.com/60496370/73511331-8a2a1c80-43a2-11ea-8d0e-c96531a22b4b.png"> <img width="280" alt="Figure 3" src="https://user-images.githubusercontent.com/60496370/73511358-9b732900-43a2-11ea-82f4-a5b57ecfb0cb.png">
+
+
+
 Ships are represented as consecutive squares on a board, arranged either 
 horizontally or vertically. Ships cannot overlap on a given board. Each player 
 has 5 ships, each of which has a different fixed size, meaning the number of 
@@ -57,7 +61,7 @@ respectively.
 
 —
 
-For the MODEL part, I wrote a set of functions which handle the Python 
+For the Model part, I wrote a set of functions which handle the Python 
 representation of the Battleship game:
 
 1.1 init board() returns the initial list of all 0's that we will be using as 
