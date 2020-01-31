@@ -175,15 +175,15 @@ guess board, play board, and opponent dict.
 The Controller part is responsible for taking user input from the terminal, 
 updating the model accordingly, and calling the view functions to display the 
 current state of the game to the users. The controller implements many actions:
-- It prompts each player to input locations in which to place their ships.
-- It verifies that the given input is valid and transferring the input to a 
+* It prompts each player to input locations in which to place their ships.
+* It verifies that the given input is valid and transferring the input to a 
 representation consistent with
 the model.
-- It processes each player’s turn: (collects input for a target box on the 
+* It processes each player’s turn: (collects input for a target box on the 
 board, shecks the validity of the input, then updating the model accordingly, 
 displays the outcomes of each turn)
-- It is responsible switching between players.
-- It checks if the game has finished.
+* It is responsible switching between players.
+* It checks if the game has finished.
 
 3.1 init_game takes no arguments and initializes the play board, guess board, 
 and ship dictionary for both players. All four boards and both ship 
@@ -210,10 +210,10 @@ string identifies a square on the board. The function returns True if the
 input is of the valid form. Each string should have two characters: The first 
 one should be a letter (representing row number), and the second is a number 
 (representing column number). Therefore, it checks if:
-- The length of each string in the input list is 2.
-– The first element is a capital letter ’A’ through ’J’ inclusive. 
-– The second element is a number 0 through 9 inclusive.
-– The input list is not empty.
+* The length of each string in the input list is 2.
+* The first element is a capital letter ’A’ through ’J’ inclusive. 
+* The second element is a number 0 through 9 inclusive.
+* The input list is not empty.
 The function does not check that the pairs are next to each other.
 
 3.7 convert_input takes in input list, a list of strings, where each string 
@@ -235,19 +235,19 @@ will input coordinates without the quotations.) The while loop loops as long as
 the player has not given a valid input, using is_valid_ship_input, 
 is_valid_ship and is_valid_placement and continues prompting the user until 
 their input is valid. Once valid input is obtained for each ship, the function:
-– Converts the input using convert input into a ship list.
-– Places the ship on the board.
-– Inserts the ship into the player’s ship dictionary, ship dict, with the ship 
+* Converts the input using convert input into a ship list.
+* Places the ship on the board.
+* Inserts the ship into the player’s ship dictionary, ship dict, with the ship 
 name as the key and the ship list as the value.
-– Displays the board for the given player so they can see their newly placed 
+* Displays the board for the given player so they can see their newly placed 
 ship.
 
 3.9 is_valid_move_input takes in move, a string representing a square on the 
 board. The function returns True if the string follows the letter-number way 
 of identifying a valid square on the board. A move is valid if:
-– Its length is 2.
-– The first element is a capital letter ’A’ through ’J’ inclusive. 
-– The second element is a number 0 through 9 inclusive.
+* Its length is 2.
+* The first element is a capital letter ’A’ through ’J’ inclusive. 
+* The second element is a number 0 through 9 inclusive.
 
 3.10 is_valid_move takes in board, the current player’s guess board, row, a row 
 number, and col, a column number. The function returns True if the square 
@@ -260,17 +260,17 @@ who the winner is.
                               
 3.12 play_game is responsible for running the game play loop for the entire 
 game. Before the loop begins, the function:
-– Initializes the game by calling init game.
-– Displays the board for Player1 and call pick ships for Player1. 
-– Displays the board for Player2 and call pick ships for Player2. 
-– Initializes the variable player to 1.
+* Initializes the game by calling init game.
+* Displays the board for Player1 and call pick ships for Player1. 
+* Displays the board for Player2 and call pick ships for Player2. 
+* Initializes the variable player to 1.
 
 The game play loop is responsible for alternating turns until the game has 
 finished. In each turn the function:
-– Prompts the current player to input a coordinate of a square on the 
+* Prompts the current player to input a coordinate of a square on the 
 opponent’s board to strike.
-– Converts the input into a row integer and a column integer.
-– Determines if the given row and column are a hit or a miss on the opponent’s 
+* Converts the input into a row integer and a column integer.
+* Determines if the given row and column are a hit or a miss on the opponent’s 
 play board using
 is hit and is miss. If it’s a hit, the function marks the hit on the opponent’s 
 play board and on the current player’s guess board using mark hit and removes 
@@ -279,8 +279,8 @@ location. It also prints ‘HIT’. If it’s a miss, the function marks the mis
 the current player’s guess board using mark miss, and prints ‘MISS’.
 
 Then the function:
-– Switches and updates player at the end of the turn.
-– Calls draw splash screen, and immediately after, uses the input function to 
+* Switches and updates player at the end of the turn.
+* Calls draw splash screen, and immediately after, uses the input function to 
 prompt the new player to press enter to begin their turn.
 When the loop has ended, the function calls quit game to end the game.
 
